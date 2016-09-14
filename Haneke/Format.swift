@@ -87,7 +87,7 @@ public struct ImageResizer {
             return image
         }
         
-        let resizedImage = image.hnk_imageByScalingToSize(resizeToSize)
+        let resizedImage = image.hnk_imageByScalingToSize(resizeToSize) ?? image
         return resizedImage
     }
 }
