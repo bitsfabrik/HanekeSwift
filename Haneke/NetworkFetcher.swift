@@ -30,7 +30,7 @@ public class NetworkFetcher<T : DataConvertible> : Fetcher<T> {
     public init(URL : NSURL) {
         self.URL = URL
 
-        let key =  URL.absoluteString
+        let key =  URL.absoluteString ?? ""
         super.init(key: key)
     }
     
