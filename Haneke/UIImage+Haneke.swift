@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
 
-    func hnk_imageByScalingToSize(toSize: CGSize) -> UIImage {
+    func hnk_imageByScalingToSize(toSize: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(toSize, !hnk_hasAlpha(), 0.0)
         drawInRect(CGRectMake(0, 0, toSize.width, toSize.height))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -19,7 +19,7 @@ extension UIImage {
     }
 
     func hnk_hasAlpha() -> Bool {
-        let alpha = CGImageGetAlphaInfo(self.CGImage)
+        let alpha = CGImageGetAlphaInfo(self.CGImage!)
         switch alpha {
         case .First, .Last, .PremultipliedFirst, .PremultipliedLast, .Only:
             return true
