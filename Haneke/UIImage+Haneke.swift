@@ -35,7 +35,7 @@ extension UIImage {
     }
     
     func hnk_decompressedImage() -> UIImage! {
-        let originalImageRef = self.CGImage
+        let originalImageRef = self.CGImage!
         let originalBitmapInfo = CGImageGetBitmapInfo(originalImageRef)
         let alphaInfo = CGImageGetAlphaInfo(originalImageRef)
         
